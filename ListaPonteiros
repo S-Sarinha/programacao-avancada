@@ -140,13 +140,179 @@
             }
             }
 
-
-
                 //Resultado: 	contador/valor/valor/endereco/endereco
-                        i = 0vet[0] = 1.1*(f + 0) = 1.1&vet[0] = 61FEB4(f + 0) = 61FEB4
-                        i = 1vet[1] = 2.2*(f + 1) = 2.2&vet[1] = 61FEB8(f + 1) = 61FEB8
-                        i = 2vet[2] = 3.3*(f + 2) = 3.3&vet[2] = 61FEBC(f + 2) = 61FEBC
-                        i = 3vet[3] = 4.4*(f + 3) = 4.4&vet[3] = 61FEC0(f + 3) = 61FEC0
-                        i = 4vet[4] = 5.5*(f + 4) = 5.5&vet[4] = 61FEC4(f + 4) = 61FEC4
+                i = 0vet[0] = 1.1*(f + 0) = 1.1&vet[0] = 61FEB4(f + 0) = 61FEB4
+                i = 1vet[1] = 2.2*(f + 1) = 2.2&vet[1] = 61FEB8(f + 1) = 61FEB8
+                i = 2vet[2] = 3.3*(f + 2) = 3.3&vet[2] = 61FEBC(f + 2) = 61FEBC
+                i = 3vet[3] = 4.4*(f + 3) = 4.4&vet[3] = 61FEC0(f + 3) = 61FEC0
+                i = 4vet[4] = 5.5*(f + 4) = 5.5&vet[4] = 61FEC4(f + 4) = 61FEC4
+
+            #Questao 6
+
+                *(pulo + 2);
+         
+            #Questao 7
+
+                p = mat + 1; // correta
+                p = mat++;
+                p = ++mat;
+                x = (*mat)++; //correta
+
+            #questao 8
+
+                int main(){
+                    int vet[] = {4,9,13};
+                    int i;
+                    for(i=0;i<3;i++){
+                    printf("%d ",*(vet+i));
+                    }
+                 }
+
+                //*  'vet[]' vai ser preenchido com valores iniciais {4, 9, 10}.
+                através de um laço for e usando "%d" na função printf,
+                Então é impresso o conteúdo do bloco da memória onde o endereço é o do 'vet',
+                a cada incremento 'i' ele irá percorrer as posições o vetor 'vet'( cada variável int corresponde a 4 bytes). */
+
+            int main(){
+                int vet[] = {4,9,13};
+                int i;
+                for(i=0;i<3;i++){
+                printf("%X ",vet+i);
+                }
+            }
+
+            /* Lista em hexadecimal os endereços de memória de cada um dos elementos do vetor vet */
+
+            #Questao 9
+              
+                x for declarado como char?
+                4092+1; 4092+2; 4092+3 
+
+                x for declarado como int?
+                4092+2; 4092+4; 4092+6 
+
+                x for declarado como float?
+                4092+4; 4092+8; 4092+12 
+
+                x for declarado como double?
+                4092+8; 4092+16; 4092+24
+        #Questao 11 
+
+            #include <stdio.h>
+
+int main()
+{
+    float aloha[10], coisas[10][5], *pf, value = 2.2;
+    char aloha2[10]="value";
+    int i=3;
 
 
+//------------------------------------------------------------------a-----------------------------------------------------------------------------------------
+
+    aloha[2] = value; 
+//irá funcionar
+    printf("ITEM A\n\n");
+    printf("Posicao 2: %f\n\n", aloha[2]);
+
+
+//------------------------------------------------------------------b-----------------------------------------------------------------------------------------
+
+    printf("ITEM B\n\n");
+    scanf("%f", &aloha);
+//irá funcionar
+
+    printf("Posicao 0: %f\n\n", aloha[0]);
+
+//------------------------------------------------------------------c-----------------------------------------------------------------------------------------
+
+    printf("ITEM C\n\n");
+    //aloha = "value"; //não irá funcionar pois nao é possivel atribuir valores a este array sem explicitar em qual posicao do array ele deve ficar.
+    //Além disso, a array é do tipo float e o programa está tentando armazenar uma string nela
+    printf("Posicao 0: %f\n\n", aloha[0]);
+    printf("String correta: %s\n\n", aloha2);
+
+//------------------------------------------------------------------d-----------------------------------------------------------------------------------------
+
+    printf("ITEM D\n\n");
+    printf("%.1f\n", aloha);
+//ira funcionar
+
+//------------------------------------------------------------------e-----------------------------------------------------------------------------------------
+
+    printf("ITEM E\n\n");
+    aloha[3] = 5.5;
+    coisas[4][4] = aloha[3];//ira funcionar
+    printf("Valor da posicao 3 de aloha: %f\n\n", coisas[4][4]);
+
+//------------------------------------------------------------------f-----------------------------------------------------------------------------------------
+
+//    coisas[5] = aloha;
+//nao vai funcionar pois coisas é uma matriz, portanto precisa de dois argumentos. O compilador interpreta coisas[5] como uma array. Além disso,a posicao do array aloha também deveria ser explicitada
+
+//------------------------------------------------------------------g-----------------------------------------------------------------------------------------
+
+    printf("ITEM G\n\n");
+//    pf = value;//nao ira funcionar, pois o valor de uma variavel float nao pode ser atribuido a um ponteiro, somente um endereco. Ver linha abaixo
+      pf = &value;//comando correto
+//------------------------------------------------------------------h-----------------------------------------------------------------------------------------
+
+    printf("ITEM H\n\n");
+    pf = aloha;//ira funcionar
+
+    return 0;
+}
+
+    #Questao 12
+        //  Os Ponteiros são utilizados exatamente como endereços de memória e assim é possível acessar posições desta memória ao qual o usuário deseje modificar os valores contidos nela. Os  ponteiros veta cópias desnecessárias.
+        int main (void) {
+            int i; int *p;
+            i = 1234; p = &i;
+            printf ("*p = %d\n", *p);
+            printf (" p = %ld\n", (long int) p);
+            printf (" p = %p\n", (void *) p);
+            printf ("&p = %p\n", (void *) &p);
+            return EXIT_SUCCESS;
+        }
+
+     #Questao 13 
+
+        #include <stdio.h>
+        #include <stdlib.h>
+        
+        void main()
+        {
+            int i, j, m, n;
+            int **matriz;
+            printf("Informe o numero de linhas: \n");
+            scanf("%d", &m);
+            printf("Informe o numero de colunas: \n");
+            scanf("%d", &n);
+            //primeiro malloc aloca as linhas
+            matriz = (int **)malloc(m * sizeof(int*));
+            for(i = 0; i < m; i++){
+                //segundo malloc aloca as colunas
+                matriz[i] = (int*) malloc(n * sizeof(int));
+            
+                //acessando a matriz
+                for(j = 0; j < n; j++){
+                    printf("Informe um valor: \n");
+                    scanf("%d", &matriz[i][j]);
+                }
+            }
+        }  
+
+        #Questao 14
+
+            // Esta função rearranja um vetor
+            // v[p..r] em ordem crescente.
+            //Se p ≥ r  não é preciso fazer nada
+
+            void 
+            quicksort (int v[], int p, int r)
+            {
+            if (p < r) {                   
+                int j = separa (v, p, r);   
+                quicksort (v, p, j-1);     // Ordem crescente
+                quicksort (v, j+1, r);     // Ordem crescente devido a função que separa.
+            }
+}
