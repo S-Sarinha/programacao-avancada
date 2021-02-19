@@ -1,0 +1,126 @@
+#Questao 1
+
+    *p é 3 e *q é 5 portanto 3 - 3/(5) + 7
+    como é uma divisão de inteiros 3/5 dá 0
+    portanto: 3 - 0 + 7 
+    Resultado: 10.
+
+#Questao 2
+    main()
+    {
+        int i=5, *p;
+        p &i;
+        printf("%x %d %d %d %d", p,*p+2,**&p,3**p,**&p+4);
+
+        return 0;     
+    }
+    Endereço de Memória de 'i', 7,5,15,9
+
+    #Questao 3
+
+        p = i; 		//  Há erro( porém o programa ainda roda).
+        q = &j;		//  Não há errp.
+        p = &*&i;	//  Não há erro.
+        i = (*&)j;	//  Há erro.
+        i = *&j;	//  Não há erro.
+        i = *&*&j;	//  Não há erro.
+        q = *p;		//  Há erro( porém o programa ainda roda).
+        i = (*p)++ + *q;//  Não há erro.
+
+    #Questao 4
+
+    /* (a) */
+        valor = 10; 	
+        p1 = &valor; 	
+        *p1 = 20; 	  
+        printf("%d \n", valor); 	 
+
+        // Resultado: 20
+
+
+	    /* (b) */
+            temp = 26.5;	
+            p2 = &temp;	
+            *p2 = 29.0;	
+                    
+            printf("%.1f \n", temp);	
+
+            // Resultado: 29.0
+
+
+
+        /* (c) */
+            p3 = &nome[0];  
+            aux = *p3;	
+            printf("%c \n", aux);	
+            //Resultado: P 
+
+
+
+        /* (d) */
+            p3 = &nome[4];	
+            aux = *p3;	
+            printf("%c \n", aux);	
+            //Resultado: e
+        
+
+        /* (e) */
+        p3 = nome;	           
+        printf("%c \n", *p3);	
+        //Resultado: P
+        
+
+        /* (f) */
+        p3 = p3 + 4;	
+        printf("%c \n", *p3);	
+        //Resultado: e
+
+
+        /* (g) */
+        p3--;		
+        printf("%c \n", *p3);	
+        //Resultado: t
+
+
+        /* (h) */
+        vetor[0] = 31;	
+        vetor[1] = 45;	
+        vetor[2] = 27;	
+        p4 = vetor;	
+        idade = *p4;	            
+        printf("%d \n", idade);
+        //Resultado: 31
+
+
+        /* (i) */
+        p5 = p4 + 1;	
+        idade = *p5;	
+        printf("%d \n", idade);
+        //Resultado: 45
+
+
+        /* (j) */
+        p4 = p5 + 1;	
+        idade = *p4;	
+        printf("%d \n", idade);	
+        //Resultado: 27
+        
+
+        /* (l) */
+        p4 = p4 - 2;	
+        idade = *p4;	
+        printf("%d \n", idade);	
+        //Resultado: 31
+
+
+        /* (m) */
+        p5 = &vetor[2] - 1;	
+        printf("%d \n", *p5);	
+        //Resultado: 45
+
+
+        /* (n) */
+        p5++;			
+        printf("%d \n", *p5);	
+        //Resultado: 27
+
